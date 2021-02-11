@@ -42,16 +42,21 @@
         </section>
 
         <!-- INGRESAR NUMERO MAGICO -->
-        <section class="container shadow-lg py-3 my-3 text-center ">
-            <label for="labelNumber " class="titulo carganro" required ">Ingrese un Número entre 0 y 100: </label>
-            <input type="number " id="ingrNro " value=0 name="labelNumber " class="mx-2 " aria-describedby="numberHelplnline " onclick="botonEnviar() " required></input>
-            <button type="submit " class="btn btn-lg btn-warning titulo my-3 " onclick="comparaNros() ">
-                Enviar  <i class="fas fa-sign-in-alt text "></i>
-            </button>
+        <section class="container shadow-lg py-3 my-3  w-50 ">
+            <div class="form d-flex flex-column text-center">
+                <label for="labelNumber " class="form-label titulo carganro" required ">Ingrese un Número entre 0 y 100: </label>
+                <input type="number " id="ingrNro " value=0 min=0 max=100 name="labelNumber " class="form-control " aria-describedby="numberHelplnline " onblur="validaNro(this) " required></input>
+                <div class="invalid-feedback ">
+                    Debe ingresar un número entre 0 y 100
+                </div>
+                <button type="submit " class="btn btn-lg btn-warning titulo my-3 " onclick="comparaNros() ">
+                    Enviar  <i class="fas fa-sign-in-alt text "></i>
+                </button>
+            </div>
         </section>
 
         <!-- ----- RESULTADOS ------ -->
-        <section id="resultado " class="container pt-3 pb-2 mb-3 text-center ">
+        <section class="container pt-3 pb-2 mb-3 text-center ">
             <div class="alert alert-success " role="alert ">
                 El resultado deberá indicar si el número ingresado es igual, mayor o menor al número mágico
             </div>
